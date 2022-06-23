@@ -54,6 +54,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using GMRs
-            DocMeta.setdocmeta!(GMRs, :DocTestSetup, :(using GMRs); recursive=true)
-            doctest(GMRs)'
+            using GaussianMixtureRegressions
+            DocMeta.setdocmeta!(GaussianMixtureRegressions, :DocTestSetup, :(using GaussianMixtureRegressions); recursive=true)
+            doctest(GaussianMixtureRegressions)'

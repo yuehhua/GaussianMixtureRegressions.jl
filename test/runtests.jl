@@ -1,4 +1,4 @@
-using GMRs
+using GaussianMixtureRegressions
 using Distributions
 using Statistics
 using Test
@@ -9,7 +9,7 @@ tests = [
     "validation",
 ]
 
-@testset "GMRs.jl" begin
+@testset "GaussianMixtureRegressions.jl" begin
     for t in tests
         include("$(t).jl")
     end

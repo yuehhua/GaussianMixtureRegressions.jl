@@ -27,7 +27,7 @@ git-tree-sha1 = "f7809f532671564e48cd81627ddcfb1ba670f87d"
 uuid = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 version = "0.27.19"
 
-[[deps.GMRs]]
+[[deps.GaussianMixtureRegressions]]
 path = ".."
 uuid = "b0deb0af-2db1-47da-a519-30ec34a965f8"
 version = "0.1.0"

@@ -1,4 +1,4 @@
-name = "GMRs"
+name = "GaussianMixtureRegressions"
 uuid = "b0deb0af-2db1-47da-a519-30ec34a965f8"
 authors = ["Yueh-Hua Tu"]
 version = "0.0.1"

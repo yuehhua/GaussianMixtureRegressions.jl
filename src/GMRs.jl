@@ -1,4 +1,4 @@
-module GMRs
+module GaussianMixtureRegressions
 
 using LinearAlgebra
 using Statistics

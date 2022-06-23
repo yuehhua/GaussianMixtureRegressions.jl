@@ -1,11 +1,11 @@
-# GMRs
+# GaussianMixtureRegressions
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://yuehhua.github.io/GMRs.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://yuehhua.github.io/GMRs.jl/dev/)
-[![Build Status](https://github.com/yuehhua/GMRs.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/yuehhua/GMRs.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/yuehhua/GMRs.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/yuehhua/GMRs.jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://yuehhua.github.io/GaussianMixtureRegressions.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://yuehhua.github.io/GaussianMixtureRegressions.jl/dev/)
+[![Build Status](https://github.com/yuehhua/GaussianMixtureRegressions.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/yuehhua/GaussianMixtureRegressions.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/yuehhua/GaussianMixtureRegressions.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/yuehhua/GaussianMixtureRegressions.jl)
 
-GMRs provides implementation of Gaussian mixture regression model<sup>1</sup> in Julia.
+GaussianMixtureRegressions provides implementation of Gaussian mixture regression model<sup>1</sup> in Julia.
 
 ## References
 

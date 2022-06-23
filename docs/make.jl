@@ -1,16 +1,16 @@
-using GMRs
+using GaussianMixtureRegressions
 using Documenter
 
-DocMeta.setdocmeta!(GMRs, :DocTestSetup, :(using GMRs); recursive=true)
+DocMeta.setdocmeta!(GaussianMixtureRegressions, :DocTestSetup, :(using GaussianMixtureRegressions); recursive=true)
 
 makedocs(;
-    modules=[GMRs],
+    modules=[GaussianMixtureRegressions],
     authors="Yueh-Hua Tu",
-    repo="https://github.com/yuehhua/GMRs.jl/blob/{commit}{path}#{line}",
-    sitename="GMRs.jl",
+    repo="https://github.com/yuehhua/GaussianMixtureRegressions.jl/blob/{commit}{path}#{line}",
+    sitename="GaussianMixtureRegressions.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://yuehhua.github.io/GMRs.jl",
+        canonical="https://yuehhua.github.io/GaussianMixtureRegressions.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/yuehhua/GMRs.jl",
+    repo="github.com/yuehhua/GaussianMixtureRegressions.jl",
     devbranch="main",
 )

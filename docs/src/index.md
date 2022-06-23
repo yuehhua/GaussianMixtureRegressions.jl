@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = GMRs
+CurrentModule = GaussianMixtureRegressions
 ```
 
-# GMRs
+# GaussianMixtureRegressions
 
-Documentation for [GMRs](https://github.com/yuehhua/GMRs.jl).
+Documentation for [GaussianMixtureRegressions](https://github.com/yuehhua/GaussianMixtureRegressions.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [GMRs]
+Modules = [GaussianMixtureRegressions]
 ```
