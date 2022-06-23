@@ -1,6 +1,16 @@
 using GMRs
+using Distributions
+using Statistics
 using Test
 
+tests = [
+    "regression",
+    "metrics",
+    "validation",
+]
+
 @testset "GMRs.jl" begin
-    # Write your tests here.
+    for t in tests
+        include("$(t).jl")
+    end
 end
