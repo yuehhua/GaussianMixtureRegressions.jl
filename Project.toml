@@ -4,6 +4,7 @@ authors = ["Yueh-Hua Tu"]
 version = "0.0.1"
 
 [deps]
+BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 GaussianMixtures = "cc18c42c-b769-54ff-9e2a-b28141a64aae"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"

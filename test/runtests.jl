@@ -7,6 +7,7 @@ tests = [
     "regression",
     "metrics",
     "validation",
+    "io",
 ]
 
 @testset "GaussianMixtureRegressions.jl" begin
