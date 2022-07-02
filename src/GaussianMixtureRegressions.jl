@@ -3,9 +3,11 @@ module GaussianMixtureRegressions
 using LinearAlgebra
 using Statistics
 
+using BSON
 using Distributions
 using GaussianMixtures
 using StatsBase
+using PDMats
 
 import StatsBase: nobs, fit, fit!, loglikelihood
 

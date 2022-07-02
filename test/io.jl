@@ -14,29 +14,39 @@
     K = 3
     model = fit(GMR{K}, X)
 
-    dict = to_dict(model)
-    @test haskey(dict, :n)
-    @test haskey(dict, :dist)
-    @test dict[:n] == n
+    @testset "to_dict, to_model" begin
+        dict = to_dict(model)
+        @test haskey(dict, :n)
+        @test haskey(dict, :dist)
+        @test dict[:n] == n
 
-    dist = dict[:dist]
-    @test haskey(dist, :components)
-    @test haskey(dist, :prior)
+        dist = dict[:dist]
+        @test haskey(dist, :components)
+        @test haskey(dist, :prior)
 
-    prior = dist[:prior]
-    @test haskey(prior, :p)
-    @test haskey(prior, :support)
-    @test size(prior[:p]) == (3, )
-    @test prior[:support] == Base.OneTo(3)
+        prior = dist[:prior]
+        @test haskey(prior, :p)
+        @test haskey(prior, :support)
+        @test size(prior[:p]) == (3, )
+        @test prior[:support] == Base.OneTo(3)
 
-    comp = dist[:components][1]
-    @test haskey(comp, :μ)
-    @test haskey(comp, :Σ)
-    @test size(comp[:μ]) == (d+1, )
-    @test size(comp[:Σ]) == (d+1, d+1)
+        comp = dist[:components][1]
+        @test haskey(comp, :μ)
+        @test haskey(comp, :Σ)
+        @test size(comp[:μ]) == (d+1, )
+        @test size(comp[:Σ]) == (d+1, d+1)
 
-    @test to_model(Categorical, prior) isa Categorical
-    @test to_model(FullNormal, comp) isa FullNormal
-    @test to_model(MixtureModel, dist) isa MixtureModel
-    @test to_model(GMR, dict) isa GMR{3}
+        @test to_model(Categorical, prior) isa Categorical
+        @test to_model(FullNormal, comp) isa FullNormal
+        @test to_model(MixtureModel, dist) isa MixtureModel
+        @test to_model(GMR, dict) isa GMR{3}
+    end
+
+    @testset "save, load" begin
+        filename = "test.bson"
+        GaussianMixtureRegressions.save(model, filename)
+        @test isfile(filename)
+        @test GaussianMixtureRegressions.load(filename) isa GMR{3}
+        rm(filename)
+    end
 end

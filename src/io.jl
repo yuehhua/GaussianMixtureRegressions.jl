@@ -1,5 +1,6 @@
 to_dict(obj::Number) = obj
 to_dict(obj::AbstractArray{<:Number}) = obj
+to_dict(obj::PDMats.PDMat) = Matrix(obj)
 
 function to_dict(obj::T) where {T}
     return Dict(key => to_dict(getfield(obj, key)) for key ∈ fieldnames(T))
@@ -8,6 +9,8 @@ end
 function to_dict(objs::Vector{<:FullNormal})
     return [to_dict(obj) for obj in objs]
 end
+
+to_model(d::Dict) = to_model(GMR, d)
 
 function to_model(::Type{GMR}, d::Dict)
     n = d[:n]
@@ -23,9 +26,9 @@ function to_model(::Type{MixtureModel}, d::Dict)
 end
 
 to_model(::Type{Categorical}, d::Dict) = Categorical(d[:p])
-to_model(::Type{FullNormal}, d::Dict) = FullNormal(d[:μ], d[:Σ])
+to_model(::Type{FullNormal}, d::Dict) = FullNormal(d[:μ], PDMat(d[:Σ]))
 
 save(m::GMR, filename::String) = bson(filename, to_dict(m))
 save(ms::Vector{<:GMR}, filename::String) = bson(filename, to_dict(ms))
 
-load(filename::String) = to_model(BSON.parse(filename))
+load(filename::String) = to_model(BSON.load(filename))
