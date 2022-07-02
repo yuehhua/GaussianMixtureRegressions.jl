@@ -3,9 +3,11 @@ module GaussianMixtureRegressions
 using LinearAlgebra
 using Statistics
 
+using BSON
 using Distributions
 using GaussianMixtures
 using StatsBase
+using PDMats
 
 import StatsBase: nobs, fit, fit!, loglikelihood
 
@@ -38,11 +40,16 @@ export
     grid_search,
     best_result,
     best_score,
-    best_model
+    best_model,
+
+    # io
+    to_dict,
+    to_model
 
 include("regression.jl")
 include("metrics.jl")
 include("validation.jl")
+include("io.jl")
 
 
 end
