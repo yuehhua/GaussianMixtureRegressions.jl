@@ -40,13 +40,24 @@
         @test to_model(FullNormal, comp) isa FullNormal
         @test to_model(MixtureModel, dist) isa MixtureModel
         @test to_model(GMR, dict) isa GMR{3}
+
+        ds = to_dict([model, model])
+        @test ds isa Vector{Dict{Symbol, Any}}
+        gmrs = to_model(ds)
+        @test gmrs isa Vector{<:GMR{K,<:MixtureModel}}
     end
 
     @testset "save, load" begin
         filename = "test.bson"
+
         GaussianMixtureRegressions.save(model, filename)
         @test isfile(filename)
         @test GaussianMixtureRegressions.load(filename) isa GMR{3}
+        rm(filename)
+
+        GaussianMixtureRegressions.save([model, model], filename)
+        @test isfile(filename)
+        @test GaussianMixtureRegressions.load(filename) isa Vector{<:GMR{3,<:MixtureModel}}
         rm(filename)
     end
 end
