@@ -1,7 +1,7 @@
 name = "GaussianMixtureRegressions"
 uuid = "b0deb0af-2db1-47da-a519-30ec34a965f8"
 authors = ["Yueh-Hua Tu"]
-version = "0.0.1"
+version = "0.0.2"
 
 [deps]
 BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
