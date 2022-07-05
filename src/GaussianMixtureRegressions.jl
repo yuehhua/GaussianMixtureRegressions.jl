@@ -9,31 +9,25 @@ using GaussianMixtures
 using StatsBase
 using PDMats
 
-import StatsBase: nobs, fit, fit!, loglikelihood
+import StatsBase: fit, fit!, loglikelihood
 
 export 
     # regression
     AbstractGMR,
     NullGMR,
     GMR,
-    coef,
-    std,
-    stderror,
-    ncoef,
-    nobs,
-    design_matrix,
-    predict,
     fit, fit!,
-    residual,
-    likelihood,
-    correlation,
     assign_clusters,
 
+    # correlations
+    correlation,
+    fisher_transform,
+
     # metrics
+    likelihood,
     loglikelihood,
     membership,
-    aic,
-    bic,
+    nll, aic, bic,
     
     # validation
     validate_score,
@@ -47,6 +41,7 @@ export
     to_model
 
 include("regression.jl")
+include("correlations.jl")
 include("metrics.jl")
 include("validation.jl")
 include("io.jl")
